@@ -1,0 +1,35 @@
+version: 2.1
+
+jobs:
+  ui_tests:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run UI tests
+          command: npm run test-ui
+
+  api_tests:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run API tests
+          command: npm run test-api
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - ui_tests
+      - api_tests:
+          requires:
+            - ui_tests
