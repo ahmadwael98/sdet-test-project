@@ -1,0 +1,22 @@
+{
+  "name": "siemens-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "chromedriver": "^130.0.0",
+    "geckodriver": "^4.5.1",
+    "nightwatch": "^3.8.0"
+  },
+  "dependencies": {
+    "jest": "^29.7.0",
+    "mock-user-auth": "^1.0.15",
+    "supertest": "^7.0.0"
+  }
+}
